@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NEO's</title>
+    <style type="text/css">
+      .loader {
+        position: fixed;
+        z-index: 99;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .loader > img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .loading-text {
+        position: absolute;
+        bottom: 5%; /* Adjust if needed */
+        right: 5%;  /* Added to position text to the right */
+        color: #FFFFFF;
+        font-size: 2em;
+        font-weight: bold;
+      }
+
+      .fade-in-letter {
+        opacity: 0;
+        display: inline-block;
+        animation: fadeInLetter 0.5s forwards;
+      }
+
+      @keyframes fadeInLetter {
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .loader.hidden {
+        animation: fadeOut 1s;
+        animation-fill-mode: forwards;
+      }
+
+      @keyframes fadeOut {
+        100% {
+          opacity: 0;
+          visibility: hidden;
+        }
+      }
+
+      .thumb {
+        height: 500px;
+        border: 3px solid blue;
+        margin: 10px;
+      }
+    </style>
+
+    <script type="text/javascript">
+      window.addEventListener("load", function () {
+        const loader = document.querySelector(".loader");
+        loader.className += " hidden"; // class "loader hidden"
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const text = "2-minutes...";
+        const textContainer = document.querySelector(".loading-text");
+
+        // Split text into characters and create spans for each letter
+        text.split("").forEach((letter, index) => {
+          const span = document.createElement("span");
+          span.textContent = letter; // Use the letter as is
+          span.style.animationDelay = `${index * 0.1}s`; // Delay each letter
+          span.classList.add("fade-in-letter");
+          textContainer.appendChild(span);
+        });
+      });
+    </script>
+    <style>
+      body {
+        margin: 0;
+      }
+    </style>
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://unpkg.com/three@0.138.0/build/three.module.js",
+          "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="loader">
+      <img src="gif/earth.gif" alt="2-minutes..." />
+      <div class="loading-text"></div> <!-- Empty initially, will be populated by JS -->
+    </div>
+    <script type="module" src="index.js"></script>
+  </body>
+</html>

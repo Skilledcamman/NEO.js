@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio showcasing projects related to Near Earth Objects using the three.js library in JavaScript.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>NEO.js</title>
+    <style>
+        /* Add custom styling for the gif and title box */
+        .gif-container {
+            margin-top: 10px; /* Decrease space below the NEO.js logo to move it higher */
+            display: flex; /* Use flexbox to align items horizontally */
+            align-items: center; /* Center items vertically */
+            position: absolute; /* Positioning it to the left side */
+            left: 20px; /* Distance from the left */
+        }
+
+        .gif-box {
+            border: 5px solid #472C4B; /* Border color same as title */
+            padding: 20px; /* Add padding around title and gif */
+            border-radius: 10px; /* Optional: Rounded corners */
+            display: inline-block; /* Make the box size fit its content */
+            margin-right: 20px; /* Space between the box and the text */
+        }
+
+        .gif-container img {
+            max-width: 300px; /* Set max width for the GIF */
+            height: auto;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px; /* Space between title and gif */
+            color: #472C4B; /* Set the color of the title */
+        }
+
+        p {
+            font-size: 1.5em; /* Set the font size for the paragraph text to be larger */
+            color: white; /* Set the color of the text to white */
+            margin: 0; /* Remove default margin */
+        }
+
+
+        .logo {
+            font-size: 30px; /* Size of NEO.js logo */
+            color: #472C4B; /* Color of NEO.js logo */
+        }
+
+        /* Styling for the project description */
+        .project-description {
+            margin-top: 20px; /* Space above the description */
+            max-width: 800px; /* Set a max width for the description */
+            margin-left: 20px; /* Space from the left */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">NEO.js</a>
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="exp.html">Experience</a>
+            <a href="social.html">Social</a>
+        </nav>
+    </header>
+    
+    <section class="home">
+        <!-- Add title "How it works!" and the GIF inside a box positioned on the left side -->
+        <div class="gif-container">
+            <div class="gif-box">
+                <h2>How it works!</h2>
+                <img src="labeltut.gif" alt="Loading animation or Near Earth Objects GIF">
+            </div>
+            <div>
+            </div>
+        </div>
+        
+        <!-- Add your project description here -->
+        <div class="project-description">
+            <p>I developed a web app called NEO.js, which displays near-Earth objects (NEOs) that are potentially hazardous, including meteors and asteroids. The project was primarily built using JavaScript, leveraging the three.js library for 3D visualization and CSS2DRenderer for labeling. Upon clicking the labels, users can access detailed information about each object, including impact chance, average diameter, closest approach distance, close approach date, and 3D models. The app visualizes these objects around Earth, though the sizes are not to scale, as they would be too small to represent meaningfully. Using CSS2DRenderer, I made the objects clickable through the EventListener function, and when a label is clicked, a popup appears, displaying basic data and a 3D model of the object in GIF format, created using Blender and public 3D resources from Sketchfab and NASA. I gathered data on size, closest approach distance, and date of approach from various sources, including Wikipedia, NASA’s Eyes on Asteroids, and The Sky Live; for higher-risk objects, data was readily available, but for less prominent objects like 2012 TY52 and 1998 KJ9, I expanded my search to resources like the NASA Jet Propulsion Laboratory. This project simplifies the process of educating people about potentially hazardous objects near Earth, as understanding the risks is the first step toward mitigation. Fortunately, we haven’t faced many recent incidents like the Tunguska or Chelyabinsk events, which resulted in significant injuries in Russia during different eras. Hopefully, we can avoid similar fates to the dinosaurs, and if an event occurs, we will be better prepared. I learned about this project only six days before the deadline from my coordinator at Unique World Education, and my knowledge of JavaScript, CSS, and HTML was limited to basic concepts learned in school and from personal side projects. While it may not have been the best decision to use JavaScript for a project of this scope, I’ve enjoyed the learning experience immensely. As I write this at 8:25 PM on the last day of this challenge, I am still actively developing the project, and participating in a local meet in Abu Dhabi has been a highlight, allowing me to connect with like-minded and skilled hobbyists and developers.</p>
+        </div>
+    </section>
+
+    <!-- Floating Button -->
+    <a href="index2.html" class="floating-btn">
+        <i class="fas fa-arrow-down"></i>
+    </a>
+</body>
+</html>
